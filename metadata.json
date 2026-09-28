@@ -1,0 +1,10 @@
+{
+  "name": "CloudVision - Pune Ground Intelligence Platform",
+  "description": "Multi-city AI-powered Weather & Ground Intelligence Platform covering Delhi, Kolkata, Bihar, Mumbai, Bengaluru, and Pune. Correlating meteorological sensors, citizen evidence, SLM text extraction, and real-time Event Fusion.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

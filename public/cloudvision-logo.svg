@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Sun Gradient -->
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC72C" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+
+    <!-- Cloud Body Gradient -->
+    <linearGradient id="cloudGradient" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#29B6F6" />
+      <stop offset="45%" stop-color="#0288D1" />
+      <stop offset="100%" stop-color="#01579B" />
+    </linearGradient>
+
+    <!-- Iris Gradient -->
+    <radialGradient id="irisGradient" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#29B6F6" />
+      <stop offset="70%" stop-color="#0288D1" />
+      <stop offset="100%" stop-color="#014A8F" />
+    </radialGradient>
+
+    <!-- Cloud Soft Shadow Filter -->
+    <filter id="cloudShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0288D1" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- ================= SUN & RAYS (Behind Cloud) ================= -->
+  <g id="sun-group">
+    <!-- Sun Disk -->
+    <circle cx="345" cy="155" r="46" fill="url(#sunGradient)" />
+
+    <!-- Sun Rays (Radiating Rounded Capsules) -->
+    <!-- Ray 1 (Top Left) -->
+    <line x1="312" y1="108" x2="300" y2="92" stroke="#FFAC1C" stroke-width="8.5" stroke-linecap="round" />
+    <!-- Ray 2 (Top) -->
+    <line x1="345" y1="94" x2="345" y2="74" stroke="#FFAC1C" stroke-width="8.5" stroke-linecap="round" />
+    <!-- Ray 3 (Top Right) -->
+    <line x1="378" y1="108" x2="394" y2="92" stroke="#FFAC1C" stroke-width="8.5" stroke-linecap="round" />
+    <!-- Ray 4 (Right Upper) -->
+    <line x1="400" y1="135" x2="422" y2="128" stroke="#FFAC1C" stroke-width="8.5" stroke-linecap="round" />
+    <!-- Ray 5 (Right Lower) -->
+    <line x1="404" y1="168" x2="426" y2="175" stroke="#FFAC1C" stroke-width="8.5" stroke-linecap="round" />
+  </g>
+
+  <!-- ================= CLOUD BODY ================= -->
+  <!-- Smooth organic 3-lobe cloud structure matching official CloudVision design -->
+  <path
+    d="M 160 300
+       C 115 300, 85 265, 85 220
+       C 85 180, 115 148, 155 148
+       C 165 148, 175 150, 184 154
+       C 200 110, 240 80, 290 80
+       C 350 80, 395 125, 400 182
+       C 418 188, 435 204, 435 228
+       C 435 258, 410 285, 380 290
+       C 365 298, 320 300, 270 300
+       Z"
+    fill="url(#cloudGradient)"
+    filter="url(#cloudShadow)"
+  />
+
+  <!-- Subtle Cloud Top Rim Highlight -->
+  <path
+    d="M 195 152
+       C 212 115, 248 90, 290 90
+       C 342 90, 382 128, 390 178"
+    fill="none"
+    stroke="#E1F5FE"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity="0.4"
+  />
+
+  <!-- ================= EYE SCLERA (White Outer Eye) ================= -->
+  <!-- Symmetrical clean almond eye silhouette inside the cloud -->
+  <path
+    d="M 130 220
+       C 180 148, 305 148, 360 220
+       C 305 292, 180 292, 130 220
+       Z"
+    fill="#FFFFFF"
+  />
+
+  <!-- ================= IRIS & PUPIL ================= -->
+  <g id="iris-group">
+    <!-- Outer Iris (Blue Gradient Circle) -->
+    <circle cx="245" cy="220" r="42" fill="url(#irisGradient)" />
+
+    <!-- Inner Pupil (Deep Navy Core) -->
+    <circle cx="245" cy="220" r="23" fill="#013A70" />
+
+    <!-- Specular Reflection Highlight (Crisp White Dot at 10 o'clock) -->
+    <circle cx="236" cy="208" r="6.5" fill="#FFFFFF" />
+  </g>
+
+  <!-- ================= BRAND TYPOGRAPHY ================= -->
+  <g id="brand-text" text-anchor="middle">
+    <!-- "CloudVision" -->
+    <text x="250" y="395" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" font-size="52" font-weight="900" letter-spacing="-1">
+      <tspan fill="#0F223D">Cloud</tspan><tspan fill="#0088FF">Vision</tspan>
+    </text>
+
+    <!-- Tagline: "Smarter Weather. Safer Tomorrow." -->
+    <text x="250" y="430" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" font-size="16.5" font-weight="600" fill="#2C405A" letter-spacing="2.8">
+      Smarter Weather. Safer Tomorrow.
+    </text>
+  </g>
+</svg>
