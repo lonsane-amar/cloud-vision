@@ -283,6 +283,11 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
         maxZoom: 19,
       }
     ).addTo(map);
+    // Fixes white blocks by forcing the map to recount container dimensions
+setTimeout(() => { 
+  if (map) map.invalidateSize(); 
+}, 250);
+
 
     // Click handler on map to allow reporting incident anywhere
     map.on('click', (e: L.LeafletMouseEvent) => {
