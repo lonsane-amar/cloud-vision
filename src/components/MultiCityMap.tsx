@@ -287,6 +287,14 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
 setTimeout(() => { 
   if (map) map.invalidateSize(); 
 }, 250);
+    // Force a sizing calculation immediately and setup automatic resize monitoring
+    map.invalidateSize();
+    const resizeObserver = new ResizeObserver(() => {
+      if (map) map.invalidateSize();
+    });
+    if (mapContainerRef.current) {
+      resizeObserver.observe(mapContainerRef.current);
+    }
 
 
     // Click handler on map to allow reporting incident anywhere
