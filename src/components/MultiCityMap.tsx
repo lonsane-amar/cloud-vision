@@ -281,13 +281,13 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
 
     // Light GIS Daylight Base Tiles (Carto Voyager for clear, eye-friendly government GIS navigation)
     L.tileLayer(
-     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' ,
+      'https://openstreetmap.org{z}/{x}/{y}.png',
       {
-        attribution: '&copy; CARTO &copy; OpenStreetMap contributors | Ground Radar & Highway Detour Engine',
-        subdomains: 'abcd',
+        attribution: '&copy; OpenStreetMap contributors | Ground Radar & Highway Detour Engine',
         maxZoom: 19,
       }
     ).addTo(map);
+
     // Fixes white blocks by forcing the map to recount container dimensions
     // Fixes white blocks by repeatedly forcing the map to recount container dimensions during page initialization
     let count = 0;
