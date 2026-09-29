@@ -284,10 +284,15 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
       }
     ).addTo(map);
     // Fixes white blocks by forcing the map to recount container dimensions
-setTimeout(() => { 
-  if (map) map.invalidateSize(); 
-}, 250);
-    // Force a sizing calculation immediately and setup automatic resize monitoring
+    // Fixes white blocks by repeatedly forcing the map to recount container dimensions during page initialization
+    let count = 0;
+    const intervalFix = setInterval(() => {
+      if (map) map.invalidateSize();
+      count++;
+      if (count >= 10) clearInterval(intervalFix); // Stops checking after 3 seconds
+    }, 300);
+
+    // Continuous safety net if the container changes size later
     map.invalidateSize();
     const resizeObserver = new ResizeObserver(() => {
       if (map) map.invalidateSize();
@@ -295,6 +300,7 @@ setTimeout(() => {
     if (mapContainerRef.current) {
       resizeObserver.observe(mapContainerRef.current);
     }
+
 
 
     // Click handler on map to allow reporting incident anywhere
