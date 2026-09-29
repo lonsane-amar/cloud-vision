@@ -793,7 +793,7 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
 
   return (
     <div className="relative w-full h-full">
-     className="w-full h-[600px] md:h-[calc(100vh-120px)] min-h-[500px] z-0"/>
+   <div ref={mapContainerRef} className="w-full z-0" style={{ width: '100%', height: 'calc(100vh - 120px)', minHeight: '500px' }} />
 
       
       {/* Top Left Click Prompt / Status */}
