@@ -91,3 +91,14 @@
 .pulse-marker-critical {
   animation: markerPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
+/* Fixes Leaflet tile separation, distortion, and diagonal blank checkerboard boxes */
+.leaflet-container img.leaflet-tile {
+  max-width: none !important;
+  max-height: none !important;
+  width: 256px !important;
+  height: 256px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  transform-origin: 0 0;
+}
