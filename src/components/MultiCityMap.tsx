@@ -280,13 +280,15 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
     // Light GIS Daylight Base Tiles (Carto Voyager for clear, eye-friendly government GIS navigation)
-    L.tileLayer(
-      'https://openstreetmap.org{z}/{x}/{y}.png',
+     L.tileLayer(
+      'https://{s}://{z}/{x}/{y}{r}.png',
       {
-        attribution: '&copy; OpenStreetMap contributors | Ground Radar & Highway Detour Engine',
-        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        subdomains: 'abcd',
+        maxZoom: 20,
       }
     ).addTo(map);
+
 
     // Fixes white blocks by forcing the map to recount container dimensions
     // Fixes white blocks by repeatedly forcing the map to recount container dimensions during page initialization
