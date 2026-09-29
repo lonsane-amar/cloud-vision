@@ -271,6 +271,11 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
       maxZoom: 18,
       zoomControl: false,
     });
+     map.whenReady(() => {
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 100);
+    });
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
@@ -788,7 +793,8 @@ export const MultiCityMap: React.FC<MultiCityMapProps> = ({
 
   return (
     <div className="relative w-full h-full">
-      <div ref={mapContainerRef} className="w-full h-full z-0" />
+     className="w-full h-[600px] md:h-[calc(100vh-120px)] min-h-[500px] z-0"/>
+
       
       {/* Top Left Click Prompt / Status */}
       <div className="absolute top-4 left-4 z-[400] flex flex-col gap-2 pointer-events-auto">
